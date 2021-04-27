@@ -1,0 +1,56 @@
+{
+  "name": "typescript-template",
+  "version": "1.0.0",
+  "description": "A complete Node.js project template using TypeScript and following general best practices.",
+  "keywords": [
+    "typescript",
+    "template"
+  ],
+  "author": {
+    "name": "Ming Li"
+  },
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liming/node-typescript-template.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "changelog": "conventional-changelog -p angular -u",
+    "changelog:update": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "cover": "jest --coverage",
+    "preversion": "npm run build && npm run cover:check",
+    "postversion": "git push && git push --tags",
+    "prepare": "npm run build",
+    "test": "jest",
+    "upgrade": "npx npm-check -u",
+    "version": "npm run build && npm run changelog:update"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "conventional-changelog-cli": "^2.0.12",
+    "coveralls": "^3.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^7.25.0",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.6.3",
+    "source-map-support": "^0.5.12",
+    "ts-jest": "^26.5.5",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {}
+}
